@@ -4,7 +4,7 @@ import NavCard from "./navCard";
 
 function NavBar() {
 	return (
-		<nav className={`lg:w-96 bg-gray-400 hidden md:block`}>
+		<nav className={`lg:w-96 bg-gray-400 bg-opacity-90 hidden md:block`}>
 			<div className="flex gap-4 w-fit items-center mx-4 my-6">
 				<img
 					className="object-contain rounded-full h-16 aspect-square bg-gray-100"

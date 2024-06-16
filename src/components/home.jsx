@@ -12,10 +12,10 @@ function Home() {
 	}
 
 	return (
-		<div className="flex flex-col w-full text-white">
-			<div className="flex w-full bg-yellow-100">
+		<div className="flex flex-col w-full text-white bg-paper-texture">
+			<div className="flex w-full">
 				<NavBar></NavBar>
-				<main className="w-full bg-gray-500 p-8 gap-4 flex flex-col min-h-screen">
+				<main className="w-full bg-gray-500 p-8 gap-4 flex flex-col min-h-screen bg-opacity-85">
 					<div className="w-full overflow-visible h-16 flex justify-between items-center">
 						<NoteFilter></NoteFilter>
 						<button
