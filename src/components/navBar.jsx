@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { FaHome } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import NavCard from "./navCard";
 
@@ -15,7 +16,17 @@ function NavBar() {
 
 			<div className="flex flex-col h-screen overflow-y-auto">
 				<hr></hr>
-				<NavCard text={"Home"} link={"/"} color={undefined}></NavCard>
+				<NavLink
+					className={
+						" transition-all hover:bg-gray-200 flex gap-4 py-4 px-8 items-center"
+					}
+					to={`/`}
+				>
+					<FaHome />
+					<span className="font-semibold">Home</span>
+				</NavLink>
+				<hr></hr>
+				<NavCard text={"Important"} link={"/"} color={"red"}></NavCard>
 			</div>
 		</nav>
 	);

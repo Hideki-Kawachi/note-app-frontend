@@ -15,7 +15,6 @@ function NavCard({ text, link, color }) {
 					style={{ backgroundColor: color || "white" }}
 				></div>
 				<span className="text-ellipsis text-nowrap font-semibold">{text}</span>
-				<span>{color}</span>
 			</NavLink>
 			<hr></hr>
 		</>
