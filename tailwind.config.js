@@ -45,7 +45,11 @@ module.exports = {
 			white: "#ffffff",
 			black: "#000000",
 		},
-		extend: {},
+		extend: {
+			backgroundImage: {
+				"paper-texture": "url('/public/paper-texture.jpg')",
+			},
+		},
 	},
 	plugins: [],
 };

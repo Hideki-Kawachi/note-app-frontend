@@ -6,7 +6,6 @@ function NoteFilter() {
 	const [filter, setFilter] = useState("");
 
 	useEffect(() => {
-		console.log("FILTER:", filter);
 		setShowDropdown(false);
 	}, [filter]);
 
