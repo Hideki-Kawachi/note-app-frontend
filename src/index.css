@@ -3,3 +3,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
+
+	background-color: #9b9b9b;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	background-color: #9b9b9b;
+}
+
+::-webkit-scrollbar-thumb {
+	-webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
+	background-color: #505050;
+}
