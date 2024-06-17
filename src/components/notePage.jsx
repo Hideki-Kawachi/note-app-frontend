@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FaCirclePlus } from "react-icons/fa6";
+import { FaChevronDown, FaCirclePlus } from "react-icons/fa6";
 import { useParams } from "react-router-dom";
 import NavBar from "./navBar";
 import NoteFilter from "./noteFilter";
@@ -8,6 +8,9 @@ import { useCurrentEditor } from "@tiptap/react";
 
 function NotePage() {
 	const [noteContent, setNoteContent] = useState("");
+	const [noteTitle, setNoteTitle] = useState("");
+	const [showLabel, setShowLabel] = useState(false);
+	const [selectedLabel, setSelectedLabel] = useState({});
 
 	const params = useParams();
 	function createNewNote() {
@@ -17,6 +20,12 @@ function NotePage() {
 	useEffect(() => {
 		console.log("NOTE:", noteContent);
 	}, [noteContent]);
+
+	function handleLabel(id, label, color) {
+		console.log("HANDLE LABEL", id, label);
+		setSelectedLabel({ id: id, label: label, color: color });
+		setShowLabel(false);
+	}
 
 	return (
 		<div className="flex flex-col w-full text-white bg-paper-texture">
@@ -35,11 +44,48 @@ function NotePage() {
 						</button>
 					</div>
 					<hr></hr>
-					<div>
-						<span className="p-4 text-sm italic font-light md:p-0">
+					<div className="flex flex-col gap-2">
+						<input
+							className="w-full px-4 py-2 text-xl bg-gray-400 rounded"
+							required
+							value={noteTitle}
+							onChange={(e) => setNoteTitle(e.target.value)}
+						></input>
+						<div className="flex">
+							<div className="flex gap-2 bg-gray-200 rounded w-fit">
+								<button
+									className={`flex items-center gap-2 px-2 py-1`}
+									onClick={() => setShowLabel(!showLabel)}
+								>
+									<span>
+										Label:{"  "}
+										{selectedLabel?.label || ""}
+									</span>
+									<FaChevronDown
+										size={16}
+										className={`${
+											showLabel ? "rotate-90" : "-rotate-90"
+										} transition-all`}
+									/>
+								</button>
+								<div
+									className={`${
+										!showLabel && "hidden"
+									} flex  items-center w-max gap-1`}
+								>
+									<button
+										className="h-full px-2 transition-all bg-red-300 border-gray-100 border-x hover:opacity-80"
+										onClick={() => handleLabel(0, "Hello")}
+									>
+										<span>Hello</span>
+									</button>
+								</div>
+							</div>
+						</div>
+						{/* <span className="p-4 text-sm italic font-light md:p-0">
 							*Changes are saved automatically
-						</span>
-						<div className="w-full mt-4">
+						</span> */}
+						<div className="w-full">
 							<Tiptap
 								content={noteContent}
 								setContent={setNoteContent}

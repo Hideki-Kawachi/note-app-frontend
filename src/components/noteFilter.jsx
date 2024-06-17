@@ -11,7 +11,7 @@ function NoteFilter() {
 
 	return (
 		<>
-			<div className="flex justify-between items-center gap-2 w-fit">
+			<div className="flex items-center justify-between gap-2 w-fit">
 				<span className="text-2xl font-bold capitalize">all notes</span>
 				<button
 					className={`cursor-pointer transition-all ${
@@ -23,24 +23,24 @@ function NoteFilter() {
 				</button>
 			</div>
 			<div
-				className={`fixed top-24 z-40 flex flex-col bg-gray-200 w-fit h-fit transition-all capitalize rounded-lg text-lg text-white  ${
+				className={`absolute top-24 z-40 flex flex-col bg-gray-200 w-fit h-fit transition-all capitalize rounded-lg text-lg text-white  ${
 					!showDropdown && "hidden"
 				}`}
 			>
 				<button
-					className="capitalize hover:bg-gray-300 text-start py-2 px-4"
+					className="px-4 py-2 capitalize hover:bg-gray-300 text-start"
 					onClick={() => setFilter("All Notes")}
 				>
 					All Notes
 				</button>
 				<button
-					className="capitalize hover:bg-gray-300 text-start py-2 px-4"
+					className="px-4 py-2 capitalize hover:bg-gray-300 text-start"
 					onClick={() => setFilter("School Notes")}
 				>
 					School Notes
 				</button>
 				<button
-					className="capitalize hover:bg-gray-300 text-start py-2 px-4"
+					className="px-4 py-2 capitalize hover:bg-gray-300 text-start"
 					onClick={() => setFilter("Programming Notes")}
 				>
 					Programming Notes
