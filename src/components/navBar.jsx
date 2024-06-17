@@ -2,13 +2,14 @@ import React from "react";
 import { FaHome } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import NavCard from "./navCard";
+import "../index.css";
 
 function NavBar() {
 	return (
 		<nav className={`lg:w-96 bg-gray-400 bg-opacity-90 hidden md:block`}>
-			<div className="flex gap-4 w-fit items-center mx-4 my-6">
+			<div className="flex items-center gap-4 mx-4 my-6 w-fit">
 				<img
-					className="object-contain rounded-full h-16 aspect-square bg-gray-100"
+					className="object-contain h-16 bg-gray-100 rounded-full aspect-square"
 					alt="profile"
 				></img>
 				<span className="font-semibold">Hideki Kawachi</span>
