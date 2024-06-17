@@ -1,6 +1,8 @@
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import React, { useEffect } from "react";
+import { baseKeymap } from "prosemirror-commands";
+import { keymap } from "prosemirror-keymap";
+import React from "react";
 
 const MenuBar = ({ editor }) => {
 	if (!editor) {
@@ -85,6 +87,8 @@ const extensions = [
 			keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
 		},
 	}),
+	// Including baseKeymap to ensure default behavior is preserved
+	keymap(baseKeymap),
 ];
 
 function Tiptap({ content, setContent }) {
